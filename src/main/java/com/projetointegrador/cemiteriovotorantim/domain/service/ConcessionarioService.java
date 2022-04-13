@@ -16,4 +16,12 @@ public class ConcessionarioService {
     public Concessionario save(Concessionario c){ return concessionarioRepository.save(c);}
 
     public List<Concessionario> all(){return concessionarioRepository.findAll();}
+
+    public List<Concessionario> findByNomeStratsWith(String nome){
+        return concessionarioRepository.findByNomeStartsWithIgnoreCase(nome);
+    }
+
+    public List<Concessionario> findByName(String nome){
+    return concessionarioRepository.findByNomeIgnoreCase(nome);
+    }
 }

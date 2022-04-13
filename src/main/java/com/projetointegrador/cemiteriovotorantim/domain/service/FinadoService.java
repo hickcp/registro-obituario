@@ -15,4 +15,7 @@ public class FinadoService {
 
     public Finado save(Finado finado){ return finadoRepository.save(finado);}
     public List<Finado> all(){return finadoRepository.findAll();}
+    public List<Finado> findByNomeStratsWith(String nome){
+        return finadoRepository.findByNomeStartsWithIgnoreCase(nome);
+    }
 }
