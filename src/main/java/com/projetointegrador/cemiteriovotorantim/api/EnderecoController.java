@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/endereco")
 public class EnderecoController {
 
-    @Autowired
+    //@Autowired
     private EnderecoService enderecoService;
 
-    @Autowired
+    //@Autowired
     private ConcessionarioService concessionarioService;
 
     @PostMapping("/write")

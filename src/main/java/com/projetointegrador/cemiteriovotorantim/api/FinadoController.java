@@ -16,9 +16,9 @@ import java.util.List;
 @RequestMapping(path = "/finado")
 public class FinadoController {
 
-    @Autowired
+    //@Autowired
     private FinadoService finadoService;
-    @Autowired
+    //@Autowired
     private ConcessionarioService concessionarioService;
 
     @GetMapping("/all")
