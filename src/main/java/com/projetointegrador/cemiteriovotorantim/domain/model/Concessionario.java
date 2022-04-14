@@ -23,6 +23,7 @@ public class Concessionario {
     @OneToMany(mappedBy = "concessionario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Finado> finados = new ArrayList<>();
 
+    @JsonIgnoreProperties("concessionario")
     @OneToOne(mappedBy = "concessionario", cascade = CascadeType.ALL, orphanRemoval = true)
     private Endereco endereco;
 
