@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(path = "/concessionario")
 public class ConcessionarioController {
 
-    //@Autowired
+    @Autowired
     private ConcessionarioService concessionarioService;
 
     @GetMapping("/all")
