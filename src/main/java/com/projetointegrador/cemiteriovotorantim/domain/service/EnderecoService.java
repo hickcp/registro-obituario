@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EnderecoService {
 
-    @Autowired
+    //@Autowired
     private EnderecoRepository enderecoRepository;
 
     public Endereco save(Endereco endereco){
