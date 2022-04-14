@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class ConcessionarioService {
 
-    @Autowired
+    //@Autowired
     private ConcessionarioRepository concessionarioRepository;
 
     public Concessionario save(Concessionario c){ return concessionarioRepository.save(c);}
