@@ -1,11 +1,14 @@
 package com.projetointegrador.cemiteriovotorantim.domain.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
 public class Endereco {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment"/*GenerationType.IDENTITY*/)
+    @GenericGenerator(name = "increment", strategy ="increment")
     private Long id;
     @Column(name = "Estado", nullable = false)
     private String estado;

@@ -1,6 +1,7 @@
 package com.projetointegrador.cemiteriovotorantim.domain.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,7 +10,8 @@ import java.util.List;
 @Entity
 public class Concessionario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment"/*GenerationType.IDENTITY*/)
+    @GenericGenerator(name = "increment", strategy ="increment")
     private Long id;
     @Column(name = "Nome", nullable = false)
     private String nome;

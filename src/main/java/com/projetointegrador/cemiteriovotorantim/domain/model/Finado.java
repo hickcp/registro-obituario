@@ -1,12 +1,15 @@
 package com.projetointegrador.cemiteriovotorantim.domain.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
-import java.time.LocalDate;
+
 
 @Entity
 public class Finado {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment"/*GenerationType.IDENTITY*/)
+    @GenericGenerator(name = "increment", strategy ="increment")
     private Long id;
     @Column(name = "Nome", nullable = false)
     private String nome;
@@ -15,9 +18,9 @@ public class Finado {
     @Column(name = "RG", nullable = false)
     private String rg;
     @Column(name = "DataDeObito"/*, nullable = false*/)
-    private LocalDate dataObito;
+    private String dataObito;
     @Column(name = "DataDeNascimento"/*, nullable = false*/)
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     @Column(name = "Tumulo", nullable = false)
     private String tumulo;
 
@@ -57,19 +60,19 @@ public class Finado {
         this.rg = rg;
     }
 
-    public LocalDate getDataObito() {
+    public String getDataObito() {
         return dataObito;
     }
 
-    public void setDataObito(LocalDate dataObito) {
+    public void setDataObito(String dataObito) {
         this.dataObito = dataObito;
     }
 
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
