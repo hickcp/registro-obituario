@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class FinadoService {
 
-    //@Autowired
+    @Autowired
     private FinadoRepository finadoRepository;
 
     public Finado save(Finado finado){ return finadoRepository.save(finado);}
