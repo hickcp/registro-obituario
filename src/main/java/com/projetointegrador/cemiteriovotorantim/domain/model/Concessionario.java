@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +18,12 @@ public class Concessionario {
     private String nome;
     @Column(name = "CPF", nullable = false)
     private String cpf;
-
     @Column(name = "RG", nullable = false)
     private String rg;
+
+    @Column(name = "DataDeNascimento"/*, nullable = false*/)
+    private LocalDate dataNascimento;
+
 
     @JsonIgnoreProperties("concessionario")
     @OneToMany(mappedBy = "concessionario", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -77,5 +81,11 @@ public class Concessionario {
         this.finados = finados;
     }
 
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
 
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 }
